@@ -1,0 +1,35 @@
+name: "@simatic-ax/ae-tiax"
+version: 0.0.2
+type: lib
+targets:
+  - "1500"
+  # - axunit-llvm
+dependencies:
+  "@ax/system-strings": 4.1.43
+  "@ax/system-math": 3.1.7
+  "@simatic-ax/json": 4.1.0
+  "@simatic-ax/statemachine": 2.1.0
+devDependencies:
+  "@ax/sdk": 3.0.8
+  "@ax/ax2tia": 4.2.8
+  "@simatic-ax/snippetscollection": 0.0.15
+variables:
+  GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
+  LIBRARY_DOCUMENTS_FOLDER: "HandoverLibraryDocuments"
+  # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
+scripts:
+  export-tialib: ax2tia -i bin/1500/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
+  import-tialib: '"$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe"
+    -i "./bin/HandoverLibraryDocuments" -o "./$GLOBAL_LIBRARY_PATH" -u'
+  create-tialib:
+    - apax build
+    - apax export-tialib
+    - apax import-tialib
+registries:
+  '@simatic-ax': 'https://npm.pkg.github.com/'
+files:
+  - 'README.md'
+  - 'LICENSE.md'
+  - 'changelog.md'
+  - 'doc'
+  - 'bin/HandoverLibraryDocuments'
