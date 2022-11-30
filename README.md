@@ -4,13 +4,12 @@
 
 The TIAX use case is a workflow, which converts a library written in ST and SIMATIC AX to TIA Portal global library for TIA Portal > V18
 
-
-## What shows the application example:
+## What shows the application example
 
 This application example shows two different use cases:
 
 1. Trafficlight
-    
+
     The Trafficlight is a simple state machine, which shows the the phases of a traffic light (`red` --> `red-yellow` --> `green` --> `yellow` --> `red`). Each phase will be active for one second.
 
     ```mermaid
@@ -59,21 +58,23 @@ This application example shows two different use cases:
 
     ![TIA](img/TiaUsage.png)
 
-
 ## Used features in this application example
 
 ### ST features
+
 - Namespaces
 - Enumeration
-- Class & Methods 
+- Class & Methods
 - Call of private methods (THIS-Operator)
 - Definition and implementation of interfaces (INTERFACE/IMPLEMENTS)
 - Access modifier (PRIVATE/PUBLIC)
 
 ### UnitTesting
+
 - Test fixture
 - Test method
 - Assertions
 
 ### AX Code Features
+
 - Snippets

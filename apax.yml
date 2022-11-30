@@ -1,5 +1,5 @@
 name: "@simatic-ax/ae-tiax"
-version: 0.0.2
+version: 0.0.4
 type: lib
 targets:
   - "1500"
@@ -7,11 +7,11 @@ targets:
 dependencies:
   "@ax/system-strings": 4.1.43
   "@ax/system-math": 3.1.7
-  "@simatic-ax/json": 4.1.0
+  "@simatic-ax/json": 4.1.1
   "@simatic-ax/statemachine": 2.1.0
 devDependencies:
   "@ax/sdk": 3.0.8
-  "@ax/ax2tia": 4.2.8
+  "@ax/ax2tia": 4.2.10
   "@simatic-ax/snippetscollection": 0.0.15
 variables:
   GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
