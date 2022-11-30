@@ -195,6 +195,7 @@ wait until the import process is finished
 
 ![finished](docs/import%20finished.gif)
 
+
 ### Crate library via UI
 
 1. click on
@@ -204,3 +205,17 @@ wait until the import process is finished
     ![select](docs/select_tialib.gif)
 
 1. wait until the import process is finished
+
+
+### Location of the Global Library 
+
+The generated global library you'll find in the following folder:
+
+![](docs/globallib.gif)
+
+If you want to adapt the name of the library (and output directory), you can modify the apax.yml
+
+```yml
+variables:
+  GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
+```
