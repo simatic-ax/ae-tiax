@@ -23,12 +23,7 @@ NAMESPACE Simatic.Ax.Tiax
             _stateYellowTrans : Transition;
             init : BOOL;
         END_VAR
-        VAR_TEMP
-            refStateGreen : REF_TO StateGreen;
-            refStateRed : REF_TO StateRed;
-            refStateYellow : REF_TO StateYellow;
-            refStateRedYellow : REF_TO StateRedYellow;
-        END_VAR
+
         IF NOT init THEN
             // Congfigure StateController
             _sc.InitialState := _stateRed;

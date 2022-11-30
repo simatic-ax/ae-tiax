@@ -1,5 +1,5 @@
 name: "@simatic-ax/ae-tiax"
-version: 0.0.4
+version: 0.0.1
 type: lib
 targets:
   - "1500"
