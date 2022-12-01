@@ -9,7 +9,7 @@ The TIAX use case is a workflow, which converts a library written in ST and SIMA
 This application example shows two different use cases:
 
 1. [Traffic light](./docs/TrafficLight.md)
-1. JSON serializer
+1. JSON serializer (planned)
 
 ## How to generate a TIA Portal global library
 
