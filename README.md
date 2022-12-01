@@ -51,7 +51,6 @@ That can be done manually step by step. Or you can use the predefined scripts in
     - `import-tialib` : Import the HandoverFiles and creates the TIA Portal global library
     - `create-tialib` : Executes the steps: build, export, import
 
-
 1. Set the library version
 
     Adapt the version of the TIA Portal global library in the file `apax.yml`
@@ -97,11 +96,12 @@ That can be done manually step by step. Or you can use the predefined scripts in
     ![output](docs/images/globallib.gif)
 
     > If you want to adapt the name of the library (and output directory), you can modify the apax.yml
+>
     >```yml
     >variables:
     >  GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
     >```
-    
+
     This library can now opened in TIA Portal >= V18
 
 ## Contribution
