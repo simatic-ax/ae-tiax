@@ -12,13 +12,19 @@ This application example shows two different use cases. To read the description 
 1. JSON serializer (in work) : A JSON structure created with the usage of the [JSON](https://github.com/simatic-ax/json) library can be filled with parameters and serialized to an ARRAY OF CHAR.
 1. Further ideas? Just create an [issue](https://github.com/simatic-ax/ae-tiax/issues/new?assignees=&labels=&template=feature_request.md&title=) or even better a `pull request`.
 
-## How to install the application example?
+## How to install the application example on your local PC?
 
-      Run the following commands in a CLI
-      ```sh
-      apax create @simatic-ax/ae-trafficlight --registry https://npm.pkg.github.com ae-tiax
-      axcode ae-tiax 
-      ```
+Run the following commands in a CLI
+
+```sh
+apax create @simatic-ax/ae-trafficlight --registry https://npm.pkg.github.com ae-tiax
+```
+
+```sh
+axcode ae-tiax 
+```
+
+AX Code starts with the content of the application example
 
 ## How to generate a TIA Portal global library
 
