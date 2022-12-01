@@ -17,7 +17,7 @@ This application example shows two different use cases. To read the description 
 Run the following commands in a CLI
 
 ```sh
-apax create @simatic-ax/ae-trafficlight --registry https://npm.pkg.github.com ae-tiax
+apax create @simatic-ax/ae-tiax --registry https://npm.pkg.github.com ae-tiax
 ```
 
 ```sh

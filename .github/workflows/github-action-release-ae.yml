@@ -1,7 +1,7 @@
 name: release-package
 on: workflow_dispatch
 env:
-  PROJECT_NAME: ae-sortingline
+  PROJECT_NAME: ae-tiax
   SCOPE: simatic-ax
   ACTIONS_REPO: simatic-ax/actions
   ACTIONS_LOCAL: ./actions
