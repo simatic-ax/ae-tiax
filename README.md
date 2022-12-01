@@ -16,9 +16,8 @@ This application example shows two different use cases. To read the description 
 
       Run the following commands in a CLI
       ```sh
-      apax create @simatic-ax/ae-trafficlight --registry https://npm.pkg.github.com ae-trafficlight
-      cd ae-trafficlight 
-      axcode .
+      apax create @simatic-ax/ae-trafficlight --registry https://npm.pkg.github.com ae-tiax
+      axcode ae-tiax 
       ```
 
 ## How to generate a TIA Portal global library
