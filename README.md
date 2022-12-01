@@ -6,17 +6,26 @@ The TIAX use case is a workflow, which converts a library written in ST and SIMA
 
 ## Which examples can you find in ths application example
 
-This application example shows two different use cases. To read the description of the use caes, just follow the link below.
+This application example shows two different use cases. To read the description of the use cases, just follow the link below.
 
 1. [Traffic light](./docs/TrafficLight.md) : A traffic light which is realized with the [statemachine](https://github.com/simatic-ax/statemachine) library.
 1. JSON serializer (in work) : A JSON structure created with the usage of the [JSON](https://github.com/simatic-ax/json) library can be filled with parameters and serialized to an ARRAY OF CHAR.
-1. Further ideas? Just create an [issue](https://github.com/simatic-ax/ae-tiax/issues/new?assignees=&labels=&template=feature_request.md&title=) or a `pull request`.
+1. Further ideas? Just create an [issue](https://github.com/simatic-ax/ae-tiax/issues/new?assignees=&labels=&template=feature_request.md&title=) or even better a `pull request`.
+
+## How to install the application example?
+
+      Run the following commands in a CLI
+      ```sh
+      apax create @simatic-ax/ae-trafficlight --registry https://npm.pkg.github.com ae-trafficlight
+      cd ae-trafficlight 
+      axcode .
+      ```
 
 ## How to generate a TIA Portal global library
 
 Before we can create the TIA Portal global library, please check, if the `TIA_PORTAL_INSTALL_PATH` in the `.env` file points to your TIA Portal installation.
 
-## Steps to create a TIA Portal global library
+### Steps to create a TIA Portal global library
 
 1. Compile the ST code with `apax build`
 1. Export the compiled library into HandoverFiles with `ax2tia...`
@@ -24,68 +33,82 @@ Before we can create the TIA Portal global library, please check, if the `TIA_PO
 
 That can be done manually step by step. Or you can use the predefined scripts in the apax.yml
 
-### The scripts in the apax.yml
+1. The scripts in the apax.yml
 
-To make the creation of the library easier, in the apax yml are some scripts predefined:
+    To make the creation of the library easier, in the apax yml are some scripts predefined:
 
-- `export-tialib` : generates the HandoverFiles
-- `import-tialib` : Import the HandoverFiles and creates the TIA Portal global library
-- `create-tialib` : Executes the steps: build, export, import
+    ```yml
+    scripts:
+      export-tialib: ax2tia -i bin/1500/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
+      import-tialib: '"$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe"
+        -i "./bin/HandoverLibraryDocuments" -o "./$GLOBAL_LIBRARY_PATH" -u'
+      create-tialib:
+        - apax build
+        - apax export-tialib
+        - apax import-tialib
+    ```
 
-```yml
-scripts:
-  export-tialib: ax2tia -i bin/1500/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
-  import-tialib: '"$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe"
-    -i "./bin/HandoverLibraryDocuments" -o "./$GLOBAL_LIBRARY_PATH" -u'
-  create-tialib:
-    - apax build
-    - apax export-tialib
-    - apax import-tialib
-```
+    - `export-tialib` : generates the HandoverFiles
+    - `import-tialib` : Import the HandoverFiles and creates the TIA Portal global library
+    - `create-tialib` : Executes the steps: build, export, import
 
-## Set the library version
 
-Adapt the version of the TIA Portal global library in the file `apax.yml`
+1. Set the library version
 
-```yml
-name: "@simatic-ax/ae-tiax"
-version: 0.0.1
-type: lib
-```
+    Adapt the version of the TIA Portal global library in the file `apax.yml`
 
-> for the first run, it can be kept at 0.0.1. If you create it a second time, please mind, that the same version must not exist in the gloabal library.
+    ```yml
+    name: "@simatic-ax/ae-tiax"
+    version: 0.0.1
+    type: lib
+    ```
 
-### Create library via command line
+    > for the first run, it can be kept at 0.0.1. If you create it a second time, please mind, that the same version must not exist in the gloabal library.
 
-When it's ok, just call the apax script `create-tialib` via command line
+1. Create the TIA Portal global library
 
-```bash
-apax create-tialib
-```
+    - via command line
 
-wait until the import process is finished
+      1. just call the apax script `create-tialib` via command line
 
-![finished](docs/images/import%20finished.gif)
+          ```bash
+          apax create-tialib
+          ```
 
-### Create library via UI
+      1. wait until the import process is finished
 
-1. click on
-    ![run script](docs/images/runscript.gif)
+          ![finished](docs/images/import%20finished.gif)
 
-1. select
-    ![select](docs/images/select_tialib.gif)
+    - via user interface
 
-1. wait until the import process is finished
+      1. click on
 
-### Location of the Global Library
+          ![run script](docs/images/runscript.gif)
 
-The generated global library you'll find in the following folder:
+      1. select
 
-![output](docs/images/globallib.gif)
+          ![select](docs/images/select_tialib.gif)
 
-If you want to adapt the name of the library (and output directory), you can modify the apax.yml
+      1. wait until the import process is finished
 
-```yml
-variables:
-  GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
-```
+1. Find the imported TIA Portal Global Library
+
+    The generated global library you'll find in the following folder:
+
+    ![output](docs/images/globallib.gif)
+
+    > If you want to adapt the name of the library (and output directory), you can modify the apax.yml
+    >```yml
+    >variables:
+    >  GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
+    >```
+    
+    This library can now opened in TIA Portal >= V18
+
+## Contribution
+
+Thanks for your interest in contributing. Anybody is free to report bugs, unclear documentation, and other problems regarding this repository in the Issues section or, even better, is free to propose any changes to this repository using Merge Requests.
+
+## License and Legal information
+
+Please read the [Legal information](LICENSE.md)
