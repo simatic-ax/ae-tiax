@@ -6,10 +6,10 @@ The TIAX use case is a workflow, which converts a library written in ST and SIMA
 
 ## What shows the application example
 
-This application example shows two different use cases:
+This application example shows two different use cases. To read the description of the use caes, just follow the link below.
 
-1. [Traffic light](./docs/TrafficLight.md)
-1. JSON serializer (planned)
+1. [Traffic light](./docs/TrafficLight.md) : A traffic light which is realized with the [statemachine](https://github.com/simatic-ax/statemachine) library.
+1. JSON serializer (planned) : A JSON structure created with the usage of the [JSON](https://github.com/simatic-ax/json) library can be filled with parameters and serialized to an ARRAY OF CHAR. 
 
 ## How to generate a TIA Portal global library
 
