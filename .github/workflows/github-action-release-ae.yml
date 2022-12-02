@@ -110,6 +110,7 @@ jobs:
       - name: "Pack"
         run: |
           cd ./simatic-ax-${{ env.PROJECT_NAME }}
+          ls 
           # attach the files section dynamically
           cat ./apax-files-section.txt >> ../apax.yml
           cat apax.yml
