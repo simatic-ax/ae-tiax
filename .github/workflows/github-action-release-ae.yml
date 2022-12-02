@@ -39,8 +39,9 @@ jobs:
       - id: bump
         name: "Bump version"
         run: |
-          sudo chmod +x ./conventional-commit
-          ./conventional-commit -c "fix(test): fix something" -v "${{ env.VERSION }}" >> .version
+          # sudo chmod +x ./conventional-commit
+          # ./conventional-commit -c "fix(test): fix something" -v "${{ env.VERSION }}" >> .version
+          0.99.99 >> .version
           cat .version
 
       - name: "Upload version"
