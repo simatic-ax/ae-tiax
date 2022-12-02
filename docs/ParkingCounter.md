@@ -32,31 +32,25 @@ TIA Portal compatible `ParkingCounterFB` which acts as wrapper `function block`.
 _Maybe a link what a wrapper FB is ?_ 
 _How does a wrapper work? Also link to explanation_
 
-## Steps to create the TIA Portal Global Library
+## Create Global Library for the TrafficLightWrapper
 
-1. If not done yet: Login to AX with apax login
+Now our traffic light is complete and can be imported in a TIA Portal global library --> [How to crate a global library](./../README.md)
 
-1. Install dependencies
+## Use TrafficLightWrapper in TIA Portal
 
-    ```sh
-    apax install
-    ```
+1. Open a TIA Portal project, which contains any 1500 PLC
 
-1. Create the TIA Portal Library
+1. Open the `TIAPortalGlobalLibrary`
 
-    ```sh
-    apax create-tialib
-    ```
+    ![open lib](images/open_lib.gif)
 
-    The Global Library will be stored in ./bin/TIAPortalLibrary
-
-1. Create or open an existing TIA Portal project
-
-1. Open the Global Library in TIA Portal
-
-1. Call the Block `ParkingCounterWrapper` in your application
+1. Select the function block `ParkingCounterWrapper` 
 
     ![TIA](images/TiaUsage.png)
+
+1. Instantiate the `ParkingCounterWrapper` in e.g. the Main OB
+
+
 
 
 ## Used features in this application example
@@ -74,5 +68,3 @@ _How does a wrapper work? Also link to explanation_
 - Test method
 - Assertions
 
-### AX Code Features
-- Snippets
