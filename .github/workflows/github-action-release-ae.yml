@@ -1,6 +1,5 @@
 name: release-package
-on: push
-# on: workflow_dispatch
+on: workflow_dispatch
 env:
   PROJECT_NAME: ae-tiax
   SCOPE: simatic-ax
@@ -115,12 +114,6 @@ jobs:
           cat ./template/apax-files-section.txt >> ./apax.yml
           cat apax.yml
           apax pack 2>.package.err 1>.signature
-
-      - name: "Upload version"
-        uses: actions/upload-artifact@v3
-        with:
-          name: package
-          path: '**/*'
 
       - name: "Publish"
         run: |
