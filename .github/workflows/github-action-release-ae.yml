@@ -40,9 +40,8 @@ jobs:
       - id: bump
         name: "Bump version"
         run: |
-          # sudo chmod +x ./conventional-commit
-          # ./conventional-commit -c "fix(test): fix something" -v "${{ env.VERSION }}" >> .version
-          echo 0.99.99 >> .version
+          sudo chmod +x ./conventional-commit
+          ./conventional-commit -c "fix(test): fix something" -v "${{ env.VERSION }}" >> .version
           cat .version
 
       - name: "Upload version"
@@ -123,10 +122,9 @@ jobs:
           name: package
           path: '**/*'
 
-      
-      # - name: "Publish"
-      #   run: |
-      #     echo publishing package to https://npm.pkg.github.com
-      #     cd ./simatic-ax-${{ env.PROJECT_NAME }}
-      #     PACKAGE="$(grep -oP '(?<=\").+.apax\.tgz(?=\")' .package.err)"
-      #     apax publish --package $PACKAGE --registry https://npm.pkg.github.com
+      - name: "Publish"
+        run: |
+          echo publishing package to https://npm.pkg.github.com
+          cd ./simatic-ax-${{ env.PROJECT_NAME }}
+          PACKAGE="$(grep -oP '(?<=\").+.apax\.tgz(?=\")' .package.err)"
+          apax publish --package $PACKAGE --registry https://npm.pkg.github.com
