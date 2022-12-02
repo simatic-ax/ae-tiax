@@ -1,5 +1,5 @@
 name: "@simatic-ax/template-ae-tiax"
-version: 0.0.0-replaced-in-pipeline
+version: 0.0.0-replace-in-pipeline
 type: lib
 targets:
   - "1500"
