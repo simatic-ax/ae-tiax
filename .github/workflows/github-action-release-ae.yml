@@ -90,6 +90,9 @@ jobs:
           echo name: "'@simatic-ax/template-${{ env.PROJECT_NAME }}'" >> apax.yml
           echo version: $VERSION >> apax.yml
           echo type: generic >> apax.yml
+          echo files:  >> apax.yml
+          echo "  - template"
+          echo "  - **/.gitignore"  >> apax.yml
           cat apax.yml
           cd ..
 
@@ -120,9 +123,9 @@ jobs:
           path: '**/*'
 
       
-      - name: "Publish"
-        run: |
-          echo publishing package to https://npm.pkg.github.com
-          cd ./simatic-ax-${{ env.PROJECT_NAME }}
-          PACKAGE="$(grep -oP '(?<=\").+.apax\.tgz(?=\")' .package.err)"
-          apax publish --package $PACKAGE --registry https://npm.pkg.github.com
+      # - name: "Publish"
+      #   run: |
+      #     echo publishing package to https://npm.pkg.github.com
+      #     cd ./simatic-ax-${{ env.PROJECT_NAME }}
+      #     PACKAGE="$(grep -oP '(?<=\").+.apax\.tgz(?=\")' .package.err)"
+      #     apax publish --package $PACKAGE --registry https://npm.pkg.github.com
