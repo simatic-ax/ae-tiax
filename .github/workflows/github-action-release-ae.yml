@@ -91,6 +91,7 @@ jobs:
           echo version: $VERSION >> apax.yml
           echo type: generic >> apax.yml
           cat apax.yml
+          # files section will be created in the "pack" step
           cd ..
 
       - name: "Clone the library repository into the template folder"
@@ -105,13 +106,15 @@ jobs:
           VERSION=$(cat ../../.version)
           echo version: $VERSION
           apax version $VERSION
-      
       - name: "Pack"
         run: |
           cd ./simatic-ax-${{ env.PROJECT_NAME }}
+          ls 
+          # attach the files section dynamically
+          cat ./template/apax-files-section.txt >> ./apax.yml
           cat apax.yml
           apax pack 2>.package.err 1>.signature
-      
+
       - name: "Publish"
         run: |
           echo publishing package to https://npm.pkg.github.com
