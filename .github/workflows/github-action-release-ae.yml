@@ -90,6 +90,8 @@ jobs:
           echo name: "'@simatic-ax/template-${{ env.PROJECT_NAME }}'" >> apax.yml
           echo version: $VERSION >> apax.yml
           echo type: generic >> apax.yml
+          echo files:  >> apax.yml
+          echo "  - template" >> apax.yml
           cat apax.yml
           cd ..
 
@@ -105,16 +107,24 @@ jobs:
           VERSION=$(cat ../../.version)
           echo version: $VERSION
           apax version $VERSION
-      
       - name: "Pack"
         run: |
           cd ./simatic-ax-${{ env.PROJECT_NAME }}
+          # attach the files section dynamically
+          cat ../apax-files-section.txt >> ../apax.yml
           cat apax.yml
           apax pack 2>.package.err 1>.signature
+
+      - name: "Upload version"
+        uses: actions/upload-artifact@v3
+        with:
+          name: package
+          path: '**/*'
+
       
-      - name: "Publish"
-        run: |
-          echo publishing package to https://npm.pkg.github.com
-          cd ./simatic-ax-${{ env.PROJECT_NAME }}
-          PACKAGE="$(grep -oP '(?<=\").+.apax\.tgz(?=\")' .package.err)"
-          apax publish --package $PACKAGE --registry https://npm.pkg.github.com
+      # - name: "Publish"
+      #   run: |
+      #     echo publishing package to https://npm.pkg.github.com
+      #     cd ./simatic-ax-${{ env.PROJECT_NAME }}
+      #     PACKAGE="$(grep -oP '(?<=\").+.apax\.tgz(?=\")' .package.err)"
+      #     apax publish --package $PACKAGE --registry https://npm.pkg.github.com
