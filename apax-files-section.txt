@@ -10,4 +10,4 @@ files:
   - '!**/.gitattributes'
   - '!**/.markdownlint.yml'
   - '!template/CODEOWNERS'
-  - '!apax-files-section.txt'
+  - '!template/apax-files-section.txt'
