@@ -92,8 +92,6 @@ jobs:
           echo type: generic >> apax.yml
           echo files:  >> apax.yml
           echo "  - template" >> apax.yml
-          echo "  - template/.gitignore"  >> apax.yml
-          echo "  - template/.env"  >> apax.yml
           cat apax.yml
           cd ..
 
@@ -109,11 +107,11 @@ jobs:
           VERSION=$(cat ../../.version)
           echo version: $VERSION
           apax version $VERSION
-          ls -a
-      
       - name: "Pack"
         run: |
           cd ./simatic-ax-${{ env.PROJECT_NAME }}
+          # attach the files section dynamically
+          cat ../apax-files-section.md >> ../apax.yml
           cat apax.yml
           apax pack 2>.package.err 1>.signature
 
