@@ -4,10 +4,10 @@
 
 files:
   - template
-  - "!**/.git"
-  - "!**/.vscode"
-  - "!**/.github"
-  - "!**/.gitattributes"
-  - "!**/.markdownlint.yml"
-  - "!template/CODEOWNERS"
-  - "!apax-files-section.txt"
+  - '!**/.git'
+  - '!**/.vscode'
+  - '!**/.github'
+  - '!**/.gitattributes'
+  - '!**/.markdownlint.yml'
+  - '!template/CODEOWNERS'
+  - '!apax-files-section.txt'
