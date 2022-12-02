@@ -94,7 +94,6 @@ jobs:
           echo "  - template" >> apax.yml
           echo "  - template/.gitignore"  >> apax.yml
           echo "  - template/.env"  >> apax.yml
-          echo "  - !template/CODEOWNER"  >> apax.yml
           cat apax.yml
           cd ..
 
