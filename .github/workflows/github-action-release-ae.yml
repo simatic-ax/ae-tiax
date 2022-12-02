@@ -112,6 +112,13 @@ jobs:
           cd ./simatic-ax-${{ env.PROJECT_NAME }}
           cat apax.yml
           apax pack 2>.package.err 1>.signature
+
+      - name: "Upload version"
+        uses: actions/upload-artifact@v3
+        with:
+          name: version
+          path: *.tgz
+
       
       - name: "Publish"
         run: |
