@@ -27,9 +27,3 @@ scripts:
     - apax import-tialib
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
-files:
-  - 'README.md'
-  - 'LICENSE.md'
-  - 'changelog.md'
-  - 'doc'
-  - 'bin/HandoverLibraryDocuments'
