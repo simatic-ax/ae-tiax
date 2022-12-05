@@ -2,9 +2,9 @@
 
 ## TIAX use case
 
-The TIAX use case is a workflow, which converts a library written in ST and SIMATIC AX to TIA Portal global library for TIA Portal > V18
+The TIAX use case is a workflow, which converts a library written in ST and SIMATIC AX to TIA Portal global library for TIA Portal ≥ V18
 
-## Which examples can you find in ths application example
+## Which examples can you find in ths application example?
 
 This application example shows two different use cases. To read the description of the use cases, just follow the link below.
 
@@ -12,7 +12,7 @@ This application example shows two different use cases. To read the description 
 1. JSON serializer (in work) : A JSON structure created with the usage of the [JSON](https://github.com/simatic-ax/json) library can be filled with parameters and serialized to an ARRAY OF CHAR.
 1. Further ideas? Just create an [issue](https://github.com/simatic-ax/ae-tiax/issues/new?assignees=&labels=&template=feature_request.md&title=) or even better a `pull request`.
 
-## How to install the application example on your local PC?
+## How to install the application example on your local PC
 
 Run the following commands in a CLI
 
