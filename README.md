@@ -69,31 +69,39 @@ That can be done manually step by step. Or you can use the predefined scripts in
 
     > for the first run, it can be kept at 0.0.1. If you create it a second time, please mind, that the same version must not exist in the gloabal library.
 
-1. Create the TIA Portal global library
-
-    - via command line
-
-      1. just call the apax script `create-tialib` via command line
-
-          ```bash
-          apax create-tialib
-          ```
-
-      1. wait until the import process is finished
-
-          ![finished](docs/images/import%20finished.gif)
-
     - via user interface
 
-      1. click on
+1. Create the TIA Portal global library
 
-          ![run script](docs/images/runscript.gif)
+    <details>
+    <summary><b>Via command line</b></summary>
 
-      1. select
+    1. just call the apax script `create-tialib` via command line
 
-          ![select](docs/images/select_tialib.gif)
+        ```bash
+        apax create-tialib
+        ```
 
-      1. wait until the import process is finished
+    1. wait until the import process is finished
+
+        ![finished](docs/images/import%20finished.gif)
+
+    </details>
+
+    <details>
+    <summary><b>Via user interface</b></summary>
+
+    1. click on
+
+        ![run script](docs/images/runscript.gif)
+
+    1. select
+
+        ![select](docs/images/select_tialib.gif)
+
+    1. wait until the import process is finished
+
+    </details>
 
 1. Find the imported TIA Portal Global Library
 
@@ -102,11 +110,12 @@ That can be done manually step by step. Or you can use the predefined scripts in
     ![output](docs/images/globallib.gif)
 
     > If you want to adapt the name of the library (and output directory), you can modify the apax.yml
->
+    >
     >```yml
     >variables:
     >  GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
     >```
+    >
 
     This library can now opened in TIA Portal >= V18
 
