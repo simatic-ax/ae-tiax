@@ -1,7 +1,7 @@
 USING Simatic.Ax.StateFramework;
 
 NAMESPACE Simatic.Ax.Tiax
-
+    // Wrapper for TIA Portal usage
     FUNCTION_BLOCK TrafficlightWrapper
         VAR_OUTPUT
             activeStateId : INT;
