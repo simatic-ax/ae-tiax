@@ -20,7 +20,7 @@ variables:
 scripts:
   export-tialib: ax2tia -i bin/1500/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
   import-tialib: '"$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe"
-    -i "./bin/HandoverLibraryDocuments" -o "./$GLOBAL_LIBRARY_PATH" -u'
+    -i "./bin/HandoverLibraryDocuments" -o "bin/$GLOBAL_LIBRARY_PATH" -u'
   create-tialib:
     - apax build
     - apax export-tialib
