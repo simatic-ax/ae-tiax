@@ -17,10 +17,12 @@ variables:
   GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
   LIBRARY_DOCUMENTS_FOLDER: "HandoverLibraryDocuments"
   # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
+  APAX_BUILD_ARGS:
+    - "--debug"
 scripts:
   export-tialib: ax2tia -i bin/1500/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
   import-tialib: '"$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe"
-    -i "./bin/HandoverLibraryDocuments" -o "bin/$GLOBAL_LIBRARY_PATH" -u'
+    -i "bin/$LIBRARY_DOCUMENTS_FOLDER" -o "bin/$GLOBAL_LIBRARY_PATH" -u'
   create-tialib:
     - apax build
     - apax export-tialib
