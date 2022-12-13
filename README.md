@@ -110,12 +110,11 @@ That can be done manually step by step. Or you can use the predefined scripts in
     ![output](docs/images/globallib.gif)
 
     > If you want to adapt the name of the library (and output directory), you can modify the apax.yml
-    >
+>
     >```yml
     >variables:
     >  GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
     >```
-    >
 
     This library can now opened in TIA Portal >= V18
 
