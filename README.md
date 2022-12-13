@@ -24,6 +24,12 @@ apax create @simatic-ax/ae-tiax --registry https://npm.pkg.github.com ae-tiax
 axcode ae-tiax 
 ```
 
+At first time to use ax and install package dependencies
+
+```sh
+apax install -L
+```
+
 AX Code starts with the content of the application example
 
 ## How to generate a TIA Portal global library
@@ -115,7 +121,6 @@ That can be done manually step by step. Or you can use the predefined scripts in
     >variables:
     >  GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
     >```
-    >
 
     This library can now opened in TIA Portal >= V18
 
