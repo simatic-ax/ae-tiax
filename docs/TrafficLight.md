@@ -19,7 +19,7 @@ Each state is realized as a own class which is extended from `State1Transition`
 Example:
 
 ```iec-st
-CLASS StateRed EXTENDS State1Transition
+CLASS StateRed EXTENDS AbstractTrafficLightState
     VAR
         count : LINT;
         activations : LINT;
@@ -37,13 +37,28 @@ CLASS StateRed EXTENDS State1Transition
     METHOD PUBLIC OVERRIDE OnExit
         rd^ := FALSE;
     END_METHOD
-    METHOD PUBLIC GetColor : Colors
-        GetColor := Colors#Red;
-    END_METHOD
+        METHOD PUBLIC OVERRIDE GetColor : Colors
+            GetColor := Colors#Red;
+        END_METHOD
 END_CLASS
 ```
 
-In this example, the methods `OnEntry`, `OnExit` and `OnAction` of the class `StateRed` will be overridden with our own code. So we can decide, what happens, when the state will be activated. In this case, we count the number of activations and switch the red will be set to true (which means, the red lamp will be switched on)
+In this example, the methods `OnEntry`, `OnExit` and `OnAction` of the class `StateRed` will be overridden with our own code. For example, When the state will be activated, the OnEntry method will be execute once. That means, the this example, the variable `activation` will be incremented by 1 and the variable `rd` which is a reference to a boolean variable will be set to true.
+
+For the traffic light application, there are four states necessary:
+
+- StateGreen
+- StateRed
+- StateRedYellow
+- StateYellow
+
+For each state are unit tests available. You'll find them in the test-folder:
+
+![tests](./images/tests.png)
+
+These tests can be executed direct in the IDE:
+
+![execute tests](images/testresults.png)
 
 ## Transition of the states
 
