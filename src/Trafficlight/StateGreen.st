@@ -3,13 +3,7 @@ USING Simatic.Ax.StateFramework;
 NAMESPACE Simatic.Ax.Tiax
 
     CLASS StateGreen
-        EXTENDS State1Transition // class from external AX package @simatic-ax/statemachine
-        
-        // private static
-        VAR
-            count : LINT;
-            activations : LINT;
-        END_VAR
+        EXTENDS AbstractTrafficLightState // inherit from AbstractTrafficLightState
         
         // public static
         VAR PUBLIC 
@@ -33,7 +27,7 @@ NAMESPACE Simatic.Ax.Tiax
         END_METHOD
 
         // public method with return value
-        METHOD PUBLIC GetColor : Colors
+        METHOD PUBLIC OVERRIDE GetColor : Colors
             GetColor := Colors#Green; // set return value to enum value green
         END_METHOD
     END_CLASS
