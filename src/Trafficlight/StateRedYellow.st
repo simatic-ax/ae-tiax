@@ -3,14 +3,10 @@ USING Simatic.Ax.StateFramework;
 NAMESPACE Simatic.Ax.Tiax
 
     CLASS StateRedYellow
-        EXTENDS State1Transition
+        EXTENDS AbstractTrafficLightState // inherit from AbstractTrafficLightState
         VAR PUBLIC 
             rd : REF_TO BOOL;
             ye : REF_TO BOOL;
-        END_VAR
-        VAR
-            count : LINT;
-            activations : LINT;
         END_VAR
         METHOD PUBLIC OVERRIDE OnEntry
             activations := activations + 1;
@@ -24,7 +20,7 @@ NAMESPACE Simatic.Ax.Tiax
             rd^ := FALSE;
             ye^ := FALSE; 
         END_METHOD
-        METHOD PUBLIC GetColor : Colors
+        METHOD PUBLIC OVERRIDE GetColor : Colors
             GetColor := Colors#Red_Yellow;
         END_METHOD
     END_CLASS
