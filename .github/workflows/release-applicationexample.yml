@@ -5,8 +5,6 @@ on:
       - "*"
 
 jobs:
-  lint-repo-and-markdown:
-    uses: simatic-ax/actions/.github/workflows/check-repository.yml@stable
   release-apax-lib:
     uses: simatic-ax/actions/.github/workflows/apax-publish-template.yml@stable
     secrets:
