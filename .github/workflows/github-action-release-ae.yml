@@ -16,12 +16,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: ${{ env.ACTIONS_REPO }}
-          token: ${{ secrets.CI_KIT_TOKEN }}
           path: ./actions
       - name: "Get the latest version of the package"
         run: |
           echo "@simatic-ax:registry=https://npm.pkg.github.com/" >> .npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.CI_KIT_TOKEN }}" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.DEPLOY_KEY }}" >> .npmrc
           echo "always-auth = true" >> .npmrc
           cat .npmrc
           echo "VERSION=$(npm show @${{ env.SCOPE }}/template-${{ env.PROJECT_NAME }} version --registry=https://npm.pkg.github.com --scope=${{ env.SCOPE }})" >> $GITHUB_ENV
@@ -34,7 +33,7 @@ jobs:
         with:
           repo: ${{ env.VERSIONING_TOOL_REPO }}
           file: "conventional-commit"
-          token: ${{ secrets.CI_KIT_TOKEN }}
+          token: ${{ secrets.DEPLOY_KEY }}
 
       - id: bump
         name: "Bump version"
@@ -59,7 +58,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: simatic-ax/actions
-          token: ${{ secrets.CI_KIT_TOKEN }}
           path: ./actions
 
       - name: "Install apax and dependencies"
@@ -74,7 +72,7 @@ jobs:
         run: |
           apax login \
           --registry "https://npm.pkg.github.com" \
-          --password ${{ secrets.CI_KIT_TOKEN }}
+          --password ${{ secrets.DEPLOY_KEY }}
 
       - name: "Download artifact with version"
         uses: actions/download-artifact@v3
