@@ -4,11 +4,10 @@ USING AxUnit.Assert;
 
 NAMESPACE Simatic.Ax.Tiax
 
-    /// {"DeviceName": "Device1", "Parameter": {"IP": "192.168.0.1", "Timeout": 300, "AutoConnect": true}}
     FUNCTION_BLOCK JsonParser
         VAR_INPUT
             Execute : BOOL;
-            JsonAsString : STRING; // := '{"Name": "SIMATIC", "data": {"plc_type: 1518", "OPC_SERVER_ENABLED": 1}}';
+            JsonAsString : STRING; //comes from outside := '{"Name": "SIMATIC", "data": {"plc_type: 1518", "OPC_SERVER_ENABLED": 1}}';
         END_VAR
         VAR_OUTPUT
             Name : STRING;
@@ -41,7 +40,7 @@ NAMESPACE Simatic.Ax.Tiax
             len:= Strings.ToArray.OfCharCount(str := JsonAsString, arr := buffer);
             deserializer.buffer := REF(buffer);
             
-            // Parse for String Name and expect value "SIMATIC"
+            // Parse for String Name and expect the STRING value
             keyFound := deserializer.TryParse( 'Name', value);
             IF (keyFound) THEN 
                 Name := value;
@@ -49,7 +48,7 @@ NAMESPACE Simatic.Ax.Tiax
                 Name := 'not found';
             END_IF;
 
-            // Parse for nested key darta.plc_type and expect value 1518
+            // Parse for nested key data.plc_type and expect the integer value
             keyArray[0] := 'data';
             keyArray[1] := 'plc_type';
             keyFound := deserializer.TryParse(keyArray, valueInt);
@@ -59,7 +58,7 @@ NAMESPACE Simatic.Ax.Tiax
                 Plc_type := -1;
             END_IF;
 
-            // Parse for Integer plc_type and expect value 1518
+            // Parse for nested key data.OPC_SERVER_ENABLED and expect the true or false
             keyArray[0] := 'data';
             keyArray[1] := 'OPC_SERVER_ENABLED';
             keyFound := deserializer.TryParse(keyArray, valueInt);
