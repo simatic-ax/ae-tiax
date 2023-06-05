@@ -6,8 +6,6 @@ jobs:
     uses: simatic-ax/actions/.github/workflows/apax-export-tialib.yml@stable
     secrets:
       APAX_TOKEN: ${{ secrets.APAX_TOKEN }}
-      DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
 
     with:
-      VERSION: ${{ github.ref_name }}
-      PROJECT_NAME: ae-tiax
+      LOGIN_SIMATIC_AX: true
