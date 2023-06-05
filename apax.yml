@@ -5,10 +5,10 @@ targets:
   - "1500"
   # - axunit-llvm
 dependencies:
-  "@simatic-ax/json": 4.1.3
-  "@simatic-ax/statemachine": 2.1.2
+  "@simatic-ax/json": 5.0.1
+  "@simatic-ax/statemachine": 4.0.1
 devDependencies:
-  "@ax/sdk": 3.0.18
+  "@ax/sdk": 4.0.2
   "@ax/ax2tia": 4.5.4
   "@simatic-ax/snippetscollection": 0.1.3
 variables:
