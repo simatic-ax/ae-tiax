@@ -16,15 +16,23 @@ This application example shows two different use cases. To read the description 
 
 Run the following commands in a CLI
 
+For `apax V1.2.0`
+
 ```sh
 apax create @simatic-ax/ae-tiax --registry https://npm.pkg.github.com ae-tiax
+```
+
+`apax V1.3.0`
+
+```sh
+apax create @simatic-ax/template-ae-tiax --registry https://npm.pkg.github.com ae-tiax
 ```
 
 ```sh
 axcode ae-tiax 
 ```
 
-At first time to use ax and install package dependencies
+Before you can use the application example, you've to install all the dpendencies with:
 
 ```sh
 apax install -L
