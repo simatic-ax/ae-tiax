@@ -1,0 +1,11 @@
+on:
+  push:
+
+jobs:
+  release-apax-lib:
+    uses: simatic-ax/actions/.github/workflows/apax-export-tialib.yml@stable
+    secrets:
+      APAX_TOKEN: ${{ secrets.APAX_TOKEN }}
+
+    with:
+      LOGIN_SIMATIC_AX: true
