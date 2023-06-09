@@ -8,6 +8,7 @@ files:
   - '!**/.vscode'
   - '!**/.github'
   - '!**/.gitattributes'
-  - '!**/.markdownlint.yml'
+  - '!**/.markdownlint.yml'  
+  - '!**/repolinter.json'
   - '!template/CODEOWNERS'
   - '!template/apax-files-section.yml'
