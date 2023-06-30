@@ -6,7 +6,7 @@ NAMESPACE Simatic.Ax.Tiax
     FUNCTION_BLOCK JsonParser
         VAR_INPUT
             Execute : BOOL;
-            JsonAsString : STRING; //comes from outside (e.g. '{"Name": "SIMATIC", "data": {"plc_type: 1518", "OPC_SERVER_ENABLED": 1}}')
+            JsonAsString : STRING; //comes from outside (e.g. '{"Name": "SIMATIC", "data": {"plc_type": 1518, "OPC_SERVER_ENABLED": 1}}')
         END_VAR
         VAR_OUTPUT
             Name : STRING;
