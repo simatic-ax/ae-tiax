@@ -7,8 +7,8 @@
     "name": "apax-package-name-d7b4b031",
     "version": "3.0.1",
     "dependencies": {
-      "@simatic-ax/json": "^6.0.0",
-      "@simatic-ax/statemachine": "^5.0.0"
+      "@simatic-ax/json": "6.0.0",
+      "@simatic-ax/statemachine": "5.0.0"
     },
     "devDependencies": {
       "@ax/sdk": "2311.0.1",

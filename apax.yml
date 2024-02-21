@@ -5,8 +5,8 @@ targets:
   - "1500"
   - "llvm"
 dependencies:
-  "@simatic-ax/json": ^6.0.0
-  "@simatic-ax/statemachine": ^5.0.0
+  "@simatic-ax/json": 6.0.0
+  "@simatic-ax/statemachine": 5.0.0
 devDependencies:
   "@ax/sdk": 2311.0.1
   "@ax/ax2tia": 7.0.16
