@@ -165,7 +165,7 @@ Now our traffic light is complete and can be imported in a TIA Portal global lib
 
 ## Use TrafficLightWrapper in TIA Portal
 
-1. Open a TIA Portal project , which contains any 1500 PLC
+1. Open a TIA Portal project, which contains any 1500 PLC
 
 1. Open the `TIAPortalGlobalLibrary`
 
