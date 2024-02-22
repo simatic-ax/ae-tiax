@@ -17,18 +17,11 @@ This application example shows two different use cases. To read the description 
 
 Run the following commands in a CLI
 
-For `apax V1.2.0`
+For `apax >2.0`
 
 ```sh
 apax create @simatic-ax/ae-tiax --registry https://npm.pkg.github.com ae-tiax
 ```
-
-`apax V1.3.0`
-
-```sh
-apax create @simatic-ax/template-ae-tiax --registry https://npm.pkg.github.com ae-tiax
-```
-
 ```sh
 axcode ae-tiax 
 ```
