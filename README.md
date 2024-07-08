@@ -144,7 +144,7 @@ To avoid, that the CI workflow fails because of the markdown linter, you can che
 
 ```sh
 markdownlint **/*.md --fix
-
+```
 ## License and Legal information
 
 Please read the [Legal information](LICENSE.md)
