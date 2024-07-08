@@ -22,7 +22,7 @@ apax create @simatic-ax/ae-tiax --registry https://npm.pkg.github.com ae-tiax
 ```
 
 ```sh
-axcode ae-tiax 
+axcode ae-tiax
 ```
 
 Before you can use the application example, you've to install all the dpendencies with:
@@ -35,7 +35,15 @@ AX Code starts with the content of the application example
 
 ## How to generate a TIA Portal global library
 
+Setup:
+
 Before we can create the TIA Portal global library, please check, if the `TIA_PORTAL_INSTALL_PATH` in the `.env` file points to your TIA Portal installation.
+
+Default value of `TIA_PORTAL_INSTALL_PATH`:
+
+```md
+TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
+```
 
 ### Steps to create a TIA Portal global library
 
@@ -144,6 +152,7 @@ To avoid, that the CI workflow fails because of the markdown linter, you can che
 
 ```sh
 markdownlint **/*.md --fix
+```
 
 ## License and Legal information
 
