@@ -19,7 +19,7 @@ variables:
     - "--debug"
 scripts:
   export-tialib: ax2tia -i bin/1500/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
-  import-tialib: 
+  import-tialib:
     - echo "$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe"
     - '"$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe" -i "bin/$LIBRARY_DOCUMENTS_FOLDER" -o "$GLOBAL_LIBRARY_PATH" -u'
   create-tialib:
