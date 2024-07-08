@@ -5,11 +5,11 @@ targets:
   - "1500"
   - "llvm"
 dependencies:
-  "@simatic-ax/json": 6.0.0
-  "@simatic-ax/statemachine": 5.0.0
+  "@simatic-ax/json": 7.0.0
+  "@simatic-ax/statemachine": 6.0.1
 devDependencies:
-  "@ax/sdk": 2311.0.1
-  "@ax/ax2tia": 7.0.16
+  "@ax/sdk": 2405.0.0
+  "@ax/ax2tia": 9.0.26
   "@simatic-ax/snippetscollection": 1.0.0
 variables:
   GLOBAL_LIBRARY_PATH: "apax-package-name-d7b4b031"
@@ -19,8 +19,9 @@ variables:
     - "--debug"
 scripts:
   export-tialib: ax2tia -i bin/1500/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
-  import-tialib: '"$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe"
-    -i "bin/$LIBRARY_DOCUMENTS_FOLDER" -o "$GLOBAL_LIBRARY_PATH" -u'
+  import-tialib: 
+    - echo "$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe"
+    - '"$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe" -i "bin/$LIBRARY_DOCUMENTS_FOLDER" -o "$GLOBAL_LIBRARY_PATH" -u'
   create-tialib:
     - apax build
     - apax export-tialib
@@ -28,4 +29,4 @@ scripts:
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
 installStrategy: strict
-apaxVersion: 3.1.0
+apaxVersion: 3.2.1

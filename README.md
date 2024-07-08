@@ -17,11 +17,10 @@ This application example shows two different use cases. To read the description 
 
 Run the following commands in a CLI
 
-For `apax >2.0`
-
 ```sh
 apax create @simatic-ax/ae-tiax --registry https://npm.pkg.github.com ae-tiax
 ```
+
 ```sh
 axcode ae-tiax 
 ```
@@ -29,7 +28,7 @@ axcode ae-tiax
 Before you can use the application example, you've to install all the dpendencies with:
 
 ```sh
-apax install -L
+apax install
 ```
 
 AX Code starts with the content of the application example
@@ -126,9 +125,25 @@ That can be done manually step by step. Or you can use the predefined scripts in
 
     This library can now opened in TIA Portal >= V18
 
+## Generated Wrapper
+
+The following Wrapper Function Blocks will be generated into the library. They can be used in TIA Portal.
+
+- TrafficlightWrapper
+- JsonStructure
+- ParkingCounterWrapper
+
 ## Contribution
 
 Thanks for your interest in contributing. Anybody is free to report bugs, unclear documentation, and other problems regarding this repository in the Issues section or, even better, is free to propose any changes to this repository using Merge Requests.
+
+### Markdownlint-cli
+
+This workspace will be checked by the [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli) (there is also documented ho to install the tool) tool in the CI workflow automatically.  
+To avoid, that the CI workflow fails because of the markdown linter, you can check all markdown files locally by running the markdownlint with:
+
+```sh
+markdownlint **/*.md --fix
 
 ## License and Legal information
 
