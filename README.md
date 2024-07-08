@@ -17,8 +17,6 @@ This application example shows two different use cases. To read the description 
 
 Run the following commands in a CLI
 
-For `apax >2.0`
-
 ```sh
 apax create @simatic-ax/ae-tiax --registry https://npm.pkg.github.com ae-tiax
 ```
@@ -29,7 +27,7 @@ axcode ae-tiax
 Before you can use the application example, you've to install all the dpendencies with:
 
 ```sh
-apax install -L
+apax install
 ```
 
 AX Code starts with the content of the application example
@@ -125,6 +123,15 @@ That can be done manually step by step. Or you can use the predefined scripts in
     >```
 
     This library can now opened in TIA Portal >= V18
+
+## Generated Wrapper
+
+The following Wrapper Function Blocks will be generated into the library. They can be used in TIA Portal.
+
+- TrafficlightWrapper
+- JsonStructure
+- ParkingCounterWrapper
+
 
 ## Contribution
 
