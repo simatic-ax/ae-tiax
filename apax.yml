@@ -8,7 +8,7 @@ dependencies:
   "@simatic-ax/json": ^7.0.0
   "@simatic-ax/statemachine": ^6.0.1
 devDependencies:
-  "@ax/sdk": 2405.1.0
+  "@ax/sdk": 2411.2.0
   "@ax/ax2tia": 9.0.26
   "@simatic-ax/snippetscollection": 1.0.0
 variables:
