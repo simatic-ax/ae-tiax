@@ -9,7 +9,7 @@ dependencies:
   "@simatic-ax/statemachine": ^7.0.0
 devDependencies:
   "@ax/sdk": 2411.2.0
-  "@ax/ax2tia": 10.0.8
+  "@ax/ax2tia": 11.0.18
   "@simatic-ax/snippetscollection": 1.0.0
 variables:
   GLOBAL_LIBRARY_PATH: "apax-package-name-d7b4b031"
