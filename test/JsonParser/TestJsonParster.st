@@ -15,7 +15,7 @@ NAMESPACE Simatic.Ax.Tiax
         METHOD PUBLIC MyTestMethod
             JsonParserWrapper.JsonAsString := '{"Name": "SIMATIC", "data": {"plc_type": 1518, "OPC_SERVER_ENABLED": 1}}';
             JsonParserWrapper(execute := TRUE);
-            ; // AxUnit.Assert.Equal(y, x)
+
             Equal(expected := 'SIMATIC', actual := JsonParserWrapper.Name);
             Equal(expected := 1518, actual := JsonParserWrapper.Plc_type);
             Equal(expected := TRUE, actual := JsonParserWrapper.Opc_server_enabled);
