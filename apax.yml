@@ -4,10 +4,12 @@ type: lib
 targets:
   - "1500"
   - "llvm"
+
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
 catalogs:
   "@ax/simatic-ax": 2504.0.0
+
 dependencies:
   "@simatic-ax/json": 9.0.0
   "@simatic-ax/statemachine": 8.0.0
@@ -15,12 +17,14 @@ devDependencies:
   "@ax/sdk": 2504.0.0
   "@ax/ax2tia": 11.0.18
   "@simatic-ax/snippetscollection": 1.0.0
+
 variables:
   GLOBAL_LIBRARY_PATH: "apax-package-name-d7b4b031"
   LIBRARY_DOCUMENTS_FOLDER: "HandoverLibraryDocuments"
   # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
   APAX_BUILD_ARGS:
     - "--debug"
+    
 scripts:
   export-tialib: ax2tia -i bin/1500/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
   import-tialib:
