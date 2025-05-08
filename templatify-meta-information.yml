@@ -3,11 +3,11 @@
 # here you can define the content
 
 files:
-  - template
-  - '!**/.git'
-  - '!**/.vscode'
-  - '!**/.github'
-  - '!**/.gitattributes'
-  - '!**/.markdownlint.yml'
-  - '!template/CODEOWNERS'
-  - '!template/apax-files-section.yml'
+  - .vscode
+  - docs
+  - src
+  - test
+  - .env
+  - apax.yml
+  - LICENSE.md
+  - README.md
