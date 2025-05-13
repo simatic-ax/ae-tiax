@@ -3,11 +3,13 @@
 # here you can define the content
 
 files:
+  - .env
+  - .gitignore
+  - .gitattributes
   - .vscode
   - docs
   - src
   - test
-  - .env
   - apax.yml
   - LICENSE.md
   - README.md
