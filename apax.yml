@@ -1,5 +1,6 @@
 name: "@simatic-ax/ae-tiax"
 version: 3.0.1
+description: "Collection of application examples for TIAX workflow, demonstrating conversion from SIMATIC AX to TIA Portal global libraries"
 type: lib
 targets:
   - "1500"
