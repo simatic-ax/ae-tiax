@@ -17,7 +17,7 @@ dependencies:
 devDependencies:
   "@ax/sdk": 2504.0.0
   "@ax/ax2tia": 11.0.18
-  "@simatic-ax/snippetscollection": 1.0.0
+  "@simatic-ax/snippetscollection": 1.1.0
 
 variables:
   GLOBAL_LIBRARY_PATH: "apax-package-name-d7b4b031"
