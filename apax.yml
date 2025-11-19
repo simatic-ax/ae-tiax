@@ -9,15 +9,15 @@ targets:
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
 catalogs:
-  "@ax/simatic-ax": 2510.0.0
+  "@ax/simatic-ax": ^2510.0.0
 
 dependencies:
-  "@simatic-ax/json": 10.0.0
-  "@simatic-ax/statemachine": 9.0.0
+  "@simatic-ax/json": ^10.0.1
+  "@simatic-ax/statemachine": ^9.0.1
 devDependencies:
-  "@ax/sdk": 2510.0.0
-  "@ax/ax2tia": 12.0.29
-  "@simatic-ax/snippetscollection": 1.0.0
+  "@ax/sdk": ^2510.0.0
+  "@ax/ax2tia": ^12.0.29
+  "@simatic-ax/snippetscollection": ^1.1.0
 
 variables:
   GLOBAL_LIBRARY_PATH: "apax-package-name-d7b4b031"
