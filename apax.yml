@@ -17,7 +17,7 @@ catalogs:
 
 dependencies:
   "@simatic-ax/json": ^10.0.1
-  "@simatic-ax/statemachine": ^9.0.1
+  "@simatic-ax/statemachine": ^10.0.0
 devDependencies:
   "@ax/sdk": ^2510.0.0
   "@ax/ax2tia": ^12.0.29
